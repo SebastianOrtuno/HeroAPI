@@ -1,6 +1,9 @@
-﻿namespace HeroAPI.Data;
+﻿using HeroAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
-public class AddDbContext
+namespace HeroAPI.Data;
+
+public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
 {
-    
+    public DbSet<Hero> Heroes { get; set; }
 }
